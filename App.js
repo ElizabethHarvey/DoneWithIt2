@@ -1,19 +1,22 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, SafeAreaView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableNativeFeedback,
+  Image,
+  SafeAreaView,
+} from "react-native";
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <Text>Think about the Money</Text>
-      <Image
-        blurRadius={10}
-        fadeDuration={1000}
-        source={{
-          width: 200,
-          height: 200,
-          uri: "https://picsum.photos/200/300",
-        }}
-      />
+      <TouchableNativeFeedback onPress={() => console.log("Image tapped")}>
+        <View
+          style={{ width: 200, height: 70, backgroundColor: "dodgerblue" }}
+        ></View>
+      </TouchableNativeFeedback>
     </SafeAreaView>
   );
 }
