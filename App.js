@@ -1,31 +1,30 @@
 import React from "react";
 import {
+  Dimensions,
   StyleSheet,
   Button,
   Alert,
   SafeAreaView,
   Platform,
   StatusBar,
+  View,
 } from "react-native";
 
 export default function App() {
+  console.log(Dimensions.get("screen"));
+
   return (
-    <SafeAreaView style={[styles.container, containerStyle]}>
-      <Button
-        color="purple"
-        title="Click Me"
-        onPress={() =>
-          Alert.alert("My title", "My message", [
-            { text: "Yes", onPress: () => console.log("Yes") },
-            { text: "No", onPress: () => console.log("No") },
-          ])
-        }
-      />
+    <SafeAreaView style={[styles.container]}>
+      <View
+        style={{
+          backgroundColor: "dodgerblue",
+          width: "50%",
+          height: 70,
+        }}
+      ></View>
     </SafeAreaView>
   );
 }
-
-const containerStyle = { backgroundColor: "black" };
 
 const styles = StyleSheet.create({
   container: {
