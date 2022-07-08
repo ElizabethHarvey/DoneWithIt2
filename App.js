@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { Text, View } from "react-native";
 import WelcomeScreen from "./screens/WelcomeScreen";
 
 export default function App() {
@@ -11,24 +11,17 @@ export default function App() {
         alignItems: "center",
       }}
     >
-      <View
+      <Text
         style={{
-          backgroundColor: "dodgerblue",
-          width: 100,
-          height: 100,
-          padding: 20,
-          paddingHorizontal: 10,
-          paddingLeft: 30,
+          fontFamily: "HoeflerText-BlackItalic",
+          fontSize: 30,
+          fontWeight: "600",
+          color: "purple",
+          textTransform: "uppercase",
         }}
-      />
-      <View
-        style={{
-          backgroundColor: "tomato",
-          width: 100,
-          height: 100,
-          margin: 20,
-        }}
-      />
+      >
+        I love React Native
+      </Text>
     </View>
   );
 }
