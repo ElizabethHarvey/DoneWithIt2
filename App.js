@@ -3,25 +3,34 @@ import { View } from "react-native";
 
 export default function App() {
   return (
-    <>
+    <View
+      style={{
+        backgroundColor: "#fff",
+        flex: 1,
+        flexDirection: "row",
+      }}
+    >
       <View
         style={{
-          backgroundColor: "black",
-          flex: 2,
+          backgroundColor: "dodgerblue",
+          width: 100,
+          height: 100,
         }}
       />
       <View
         style={{
           backgroundColor: "gold",
-          flex: 1,
+          width: 100,
+          height: 100,
         }}
       />
       <View
         style={{
           backgroundColor: "tomato",
-          flex: 1,
+          width: 100,
+          height: 100,
         }}
       />
-    </>
+    </View>
   );
 }
