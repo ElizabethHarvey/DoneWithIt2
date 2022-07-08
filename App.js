@@ -1,5 +1,12 @@
 import React from "react";
-import { StyleSheet, Button, Alert, SafeAreaView } from "react-native";
+import {
+  StyleSheet,
+  Button,
+  Alert,
+  SafeAreaView,
+  Platform,
+  StatusBar,
+} from "react-native";
 
 export default function App() {
   return (
@@ -23,8 +30,7 @@ const containerStyle = { backgroundColor: "black" };
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
     alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#fff",
   },
 });
