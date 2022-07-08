@@ -1,7 +1,28 @@
 import React from "react";
-import ViewImageScreen from "./screens/ViewImageScreen";
+import { View } from "react-native";
 import WelcomeScreen from "./screens/WelcomeScreen";
 
 export default function App() {
-  return <ViewImageScreen />;
+  return (
+    <View
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <View
+        style={{
+          backgroundColor: "dodgerblue",
+          width: 100,
+          height: 100,
+          shadowColor: "grey",
+          shadowOffset: { width: 0, height: 10 },
+          shadowOpacity: 1,
+          shadowRadius: 10,
+          elevation: 20,
+        }}
+      ></View>
+    </View>
+  );
 }
