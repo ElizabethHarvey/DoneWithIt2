@@ -31,6 +31,7 @@ const initialMessage = [
 
 function MessageScreen(props) {
   const [messages, setMessages] = useState(initialMessage);
+  const [refreshing, setRefreshing] = useState(false);
 
   const handleDelete = (message) => {
     // Delete the message from messages
@@ -54,6 +55,17 @@ function MessageScreen(props) {
           />
         )}
         ItemSeparatorComponent={ListItemsSeparator}
+        refreshing={refreshing}
+        onRefresh={() => {
+          setMessages([
+            {
+              id: 2,
+              title: "T2",
+              description: "D2",
+              image: require("../assets/middlefinger.jpg"),
+            },
+          ]);
+        }}
       />
     </Screen>
   );
