@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FlatList,
   SafeAreaView,
@@ -11,10 +11,10 @@ import Constants from "expo-constants";
 
 import ListItems from "../components/ListItems";
 import Screen from "../components/Screen";
-import ListItemsDeleteActions from "../components/ListItemsDeleteActions";
+import ListItemsDeleteAction from "../components/ListItemsDeleteAction";
 import ListItemsSeparator from "../components/ListItemsSeparator";
 
-const messages = [
+const initialMessage = [
   {
     id: 1,
     title: "T1",
@@ -30,6 +30,13 @@ const messages = [
 ];
 
 function MessageScreen(props) {
+  const [messages, setMessages] = useState(initialMessage);
+
+  const handleDelete = (message) => {
+    // Delete the message from messages
+    setMessages(messages.filter((m) => m.id !== message.id));
+  };
+
   return (
     <Screen>
       <FlatList
@@ -41,7 +48,9 @@ function MessageScreen(props) {
             subTitle={item.description}
             image={item.image}
             onPress={() => console.log("Message selected", item)}
-            renderRightActions={ListItemsDeleteActions}
+            renderRightActions={() => (
+              <ListItemsDeleteAction onPress={() => handleDelete(item)} />
+            )}
           />
         )}
         ItemSeparatorComponent={ListItemsSeparator}
