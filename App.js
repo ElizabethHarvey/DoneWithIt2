@@ -12,22 +12,15 @@ import Icon from "./components/Icon";
 import ListItem from "./components/ListItem";
 import AccountScreen from "./screens/AccountScreen";
 import ListingsScreen from "./screens/ListingsScreen";
+import AppTextInput from "./components/AppTextInput";
+import { UserInterfaceIdiom } from "expo-constants";
 
 export default function App() {
   const [firstName, setFirstName] = useState("");
 
   return (
     <Screen>
-      <Text>{firstName}</Text>
-      <TextInput
-        secureTextEntry
-        onChangeText={(text) => setFirstName(text)}
-        placeholder="First Name"
-        style={{
-          borderBottomColor: "#ccc",
-          borderBottomWidth: 1,
-        }}
-      />
+      <AppTextInput placeholder="Username" icon="email" />
     </Screen>
   );
 }
