@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import Constants from "expo-constants";
 
-import ListItems from "../components/ListItems";
+import ListItem from "../components/ListItem";
 import Screen from "../components/Screen";
 import ListItemsDeleteAction from "../components/ListItemsDeleteAction";
 import ListItemsSeparator from "../components/ListItemsSeparator";
@@ -44,7 +44,7 @@ function MessageScreen(props) {
         data={messages}
         keyExtractor={(message) => message.id.toString()}
         renderItem={({ item }) => (
-          <ListItems
+          <ListItem
             title={item.title}
             subTitle={item.description}
             image={item.image}
