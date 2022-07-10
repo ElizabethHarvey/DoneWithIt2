@@ -6,6 +6,7 @@ import * as Permissions from "expo-permissions";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { UserInterfaceIdiom } from "expo-constants";
+import { useNavigation } from "@react-navigation/native";
 
 import WelcomeScreen from "./screens/WelcomeScreen";
 import Card from "./components/Card";
@@ -24,15 +25,27 @@ import ListingEditScreen from "./screens/ListingEditScreen";
 import ImageInput from "./components/lists/ImageInput";
 import ImageInputList from "./components/ImageInputList";
 
-const Tweets = () => (
+const Link = () => {
+  const navigation = useNavigation();
+
+  return (
+    <Button
+      title="View Tweet"
+      onPress={() => navigation.navigate("TweetDetails", { id: 1 })}
+    />
+  );
+};
+
+const Tweets = ({ navigation }) => (
   <Screen>
     <Text>Tweets</Text>
+    <Link />
   </Screen>
 );
 
-const TweetDetails = () => (
+const TweetDetails = ({ route }) => (
   <Screen>
-    <Text>Tweets Details</Text>
+    <Text>Tweets Details {route.params.id}</Text>
   </Screen>
 );
 
