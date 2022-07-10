@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet } from "react-native";
 import * as Yup from "yup";
+import CategoryPickerItem from "../components/CategoryPickerItem";
 
 import Form from "../components/forms/AppForm";
 import FormField from "../components/forms/AppFormField";
@@ -45,6 +46,7 @@ function ListingEditScreen() {
         <Picker
           items={categories}
           name="category"
+          PickerItemComponent={CategoryPickerItem}
           placeholder="Category"
           width="50%"
         />
