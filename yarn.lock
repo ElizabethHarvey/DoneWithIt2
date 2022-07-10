@@ -1686,6 +1686,14 @@
   resolved "https://registry.npmjs.org/@react-native/polyfills/-/polyfills-2.0.0.tgz"
   integrity sha512-K0aGNn1TjalKj+65D7ycc1//H9roAQ51GJVk5ZJQFb2teECGmzd86bYDC0aYdbRf7gtovescq4Zt6FR0tgXiHQ==
 
+"@react-navigation/bottom-tabs@5.4.4":
+  version "5.4.4"
+  resolved "https://registry.yarnpkg.com/@react-navigation/bottom-tabs/-/bottom-tabs-5.4.4.tgz#460680596701560eb1994ed3f97b5b887744a643"
+  integrity sha512-U5VtzOWMMzrhNkoOlWDrWXA/N6YXaz1Diec2+sf9FP0tukUsnuMgj6rrheNqhJhc9Ntok3aZeIXbrzLmsv8NxA==
+  dependencies:
+    color "^3.1.2"
+    react-native-iphone-x-helper "^1.2.1"
+
 "@react-navigation/core@^6.2.2":
   version "6.2.2"
   resolved "https://registry.yarnpkg.com/@react-navigation/core/-/core-6.2.2.tgz#29ca539e22581616aad82b7451d47c5efe936f31"
