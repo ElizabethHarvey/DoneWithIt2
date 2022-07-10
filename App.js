@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import * as ImagePicker from "expo-image-picker";
 import { Switch, Text, TextInput, View } from "react-native";
 import AppButton from "./components/Button";
 import { UserInterfaceIdiom } from "expo-constants";
@@ -18,23 +19,14 @@ import Picker from "./components/Picker";
 import LoginScreen from "./screens/LoginScreen";
 import ListingEditScreen from "./screens/ListingEditScreen";
 
-// const categories = [
-//   { label: "Furniture", value: 1 },
-//   { label: "Clothing", value: 2 },
-//   { label: "Cameras", value: 3 },
-// ];
-// const [category, setCategory] = useState(categories[0]);
-// <Screen>
-//   <AppPicker
-//     selectedItem={category}
-//     onSelectItem={(item) => setCategory(item)}
-//     items={categories}
-//     icon="apps"
-//     placeholder="Category"
-//   />
-//   <AppTextInput icon="email" placeholder="Email" />
-// </Screen>
-
 export default function App() {
-  return <ListingEditScreen />;
+  const requestPermission = async () => {
+    const { granted } = await ImagePicker.requestCameraPermissionsAsync();
+    if (!granted) alert("You need to enable permissions");
+  };
+
+  useEffect(async () => {
+    requestPermission();
+  }, []);
+  return <Screen></Screen>;
 }
