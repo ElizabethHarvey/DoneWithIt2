@@ -3,6 +3,8 @@ import * as ImagePicker from "expo-image-picker";
 import { Button, Image, Switch, Text, TextInput, View } from "react-native";
 import AppButton from "./components/Button";
 import * as Permissions from "expo-permissions";
+import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer } from "@react-navigation/native";
 import { UserInterfaceIdiom } from "expo-constants";
 
 import WelcomeScreen from "./screens/WelcomeScreen";
@@ -22,6 +24,30 @@ import ListingEditScreen from "./screens/ListingEditScreen";
 import ImageInput from "./components/lists/ImageInput";
 import ImageInputList from "./components/ImageInputList";
 
+const Tweets = () => (
+  <Screen>
+    <Text>Tweets</Text>
+  </Screen>
+);
+
+const TweetDetails = () => (
+  <Screen>
+    <Text>Tweets Details</Text>
+  </Screen>
+);
+
+const Stack = createStackNavigator();
+const StackNavigator = () => (
+  <Stack.Navigator>
+    <Stack.Screen name="Tweets" component={Tweets} />
+    <Stack.Screen name="TweetDetails" component={TweetDetails} />
+  </Stack.Navigator>
+);
+
 export default function App() {
-  return <ListingEditScreen />;
+  return (
+    <NavigationContainer>
+      <StackNavigator />
+    </NavigationContainer>
+  );
 }
