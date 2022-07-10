@@ -16,6 +16,7 @@ import ListingsScreen from "./screens/ListingsScreen";
 import AppTextInput from "./components/AppTextInput";
 import AppPicker from "./components/AppPicker";
 import LoginScreen from "./screens/LoginScreen";
+import ListingEditScreen from "./screens/ListingEditScreen";
 
 // const categories = [
 //   { label: "Furniture", value: 1 },
@@ -35,5 +36,5 @@ import LoginScreen from "./screens/LoginScreen";
 // </Screen>
 
 export default function App() {
-  return <LoginScreen />;
+  return <ListingEditScreen />;
 }
