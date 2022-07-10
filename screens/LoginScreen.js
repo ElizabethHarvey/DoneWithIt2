@@ -5,8 +5,8 @@ import * as Yup from "yup";
 
 import { AppForm, AppFormField, SubmitButton } from "../components/forms";
 import AppText from "../AppText";
-import AppButton from "../components/AppButton";
-import AppTextInput from "../components/AppTextInput";
+import AppButton from "../components/Button";
+import AppTextInput from "../components/TextInput";
 import Screen from "../components/Screen";
 import ErrorMessage from "../components/forms/ErrorMessage";
 

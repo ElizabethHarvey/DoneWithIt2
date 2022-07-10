@@ -9,10 +9,10 @@ import {
 } from "react-native";
 import Constants from "expo-constants";
 
-import ListItem from "../components/ListItem";
+import ListItem from "../components/lists/ListItem";
 import Screen from "../components/Screen";
-import ListItemsDeleteAction from "../components/ListItemsDeleteAction";
-import ListItemsSeparator from "../components/ListItemsSeparator";
+import ListItemsDeleteAction from "../components/lists/ListItemsDeleteAction";
+import ListItemsSeparator from "../components/lists/ListItemsSeparator";
 
 const initialMessage = [
   {

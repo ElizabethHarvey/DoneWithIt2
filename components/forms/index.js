@@ -1,6 +1,6 @@
-import AppForm from "./AppForm";
-import AppFormField from "./AppFormField";
+import Form from "./Form";
+import FormField from "./FormField";
 import SubmitButton from "./SubmitButton";
 import ErrorMessage from "./ErrorMessage";
 
-export { AppForm, AppFormField, SubmitButton, ErrorMessage };
+export { Form, FormField, SubmitButton, ErrorMessage };

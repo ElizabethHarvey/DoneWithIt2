@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Switch, Text, TextInput, View } from "react-native";
-import AppButton from "./components/AppButton";
+import AppButton from "./components/Button";
 import { UserInterfaceIdiom } from "expo-constants";
 
 import WelcomeScreen from "./screens/WelcomeScreen";
@@ -10,11 +10,11 @@ import ViewImageScreen from "./screens/ViewImageScreen";
 import MessagesScreen from "./screens/MessagesScreen";
 import Screen from "./components/Screen";
 import Icon from "./components/Icon";
-import ListItem from "./components/ListItem";
+import ListItem from "./components/lists/ListItem";
 import AccountScreen from "./screens/AccountScreen";
 import ListingsScreen from "./screens/ListingsScreen";
-import AppTextInput from "./components/AppTextInput";
-import AppPicker from "./components/AppPicker";
+import AppTextInput from "./components/TextInput";
+import Picker from "./components/Picker";
 import LoginScreen from "./screens/LoginScreen";
 import ListingEditScreen from "./screens/ListingEditScreen";
 
