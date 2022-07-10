@@ -20,33 +20,44 @@ import Picker from "./components/Picker";
 import LoginScreen from "./screens/LoginScreen";
 import ListingEditScreen from "./screens/ListingEditScreen";
 import ImageInput from "./components/lists/ImageInput";
+import ImageInputList from "./components/ImageInputList";
 
 export default function App() {
-  const [imageUri, setImageUri] = useState();
-  const requestPermission = async () => {
-    const { granted } = await ImagePicker.requestCameraRollPermissionsAsync();
-    if (!granted) alert("You need to enable permissions");
+  const [imageUris, setImageUris] = useState([]);
+
+  const handleAdd = (uri) => {
+    setImageUris([...imageUris, uri]);
   };
 
-  useEffect(() => {
-    requestPermission();
-  }, []);
-
-  const selectImage = async () => {
-    try {
-      const result = await ImagePicker.launchImageLibraryAsync();
-      if (!result.cancelled) setImageUri(result.uri);
-    } catch (error) {
-      console.log("Error reading an image", error);
-    }
+  const handleRemove = (uri) => {
+    setImageUris(imageUris.filter((imageUri) => imageUri !== uri));
   };
 
   return (
     <Screen>
-      <ImageInput
-        imageUri={imageUri}
-        onChangeImage={(uri) => setImageUri(uri)}
+      <ImageInputList
+        imageUris={imageUris}
+        onAddImage={handleAdd}
+        onRemoveImage={handleRemove}
       />
     </Screen>
   );
 }
+
+// const requestPermission = async () => {
+//   const { granted } = await ImagePicker.requestCameraRollPermissionsAsync();
+//   if (!granted) alert("You need to enable permissions");
+// };
+
+// useEffect(() => {
+//   requestPermission();
+// }, []);
+
+// const selectImage = async () => {
+//   try {
+//     const result = await ImagePicker.launchImageLibraryAsync();
+//     if (!result.cancelled) setImageUri(result.uri);
+//   } catch (error) {
+//     console.log("Error reading an image", error);
+//   }
+// };
