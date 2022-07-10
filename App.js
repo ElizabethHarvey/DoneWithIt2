@@ -23,41 +23,5 @@ import ImageInput from "./components/lists/ImageInput";
 import ImageInputList from "./components/ImageInputList";
 
 export default function App() {
-  const [imageUris, setImageUris] = useState([]);
-
-  const handleAdd = (uri) => {
-    setImageUris([...imageUris, uri]);
-  };
-
-  const handleRemove = (uri) => {
-    setImageUris(imageUris.filter((imageUri) => imageUri !== uri));
-  };
-
-  return (
-    <Screen>
-      <ImageInputList
-        imageUris={imageUris}
-        onAddImage={handleAdd}
-        onRemoveImage={handleRemove}
-      />
-    </Screen>
-  );
+  return <ListingEditScreen />;
 }
-
-// const requestPermission = async () => {
-//   const { granted } = await ImagePicker.requestCameraRollPermissionsAsync();
-//   if (!granted) alert("You need to enable permissions");
-// };
-
-// useEffect(() => {
-//   requestPermission();
-// }, []);
-
-// const selectImage = async () => {
-//   try {
-//     const result = await ImagePicker.launchImageLibraryAsync();
-//     if (!result.cancelled) setImageUri(result.uri);
-//   } catch (error) {
-//     console.log("Error reading an image", error);
-//   }
-// };
