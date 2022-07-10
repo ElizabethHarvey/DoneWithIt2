@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import * as ImagePicker from "expo-image-picker";
-import { Switch, Text, TextInput, View } from "react-native";
+import { Button, Image, Switch, Text, TextInput, View } from "react-native";
 import AppButton from "./components/Button";
+import * as Permissions from "expo-permissions";
 import { UserInterfaceIdiom } from "expo-constants";
 
 import WelcomeScreen from "./screens/WelcomeScreen";
@@ -20,6 +21,7 @@ import LoginScreen from "./screens/LoginScreen";
 import ListingEditScreen from "./screens/ListingEditScreen";
 
 export default function App() {
+  const [imageUri, setImageUri] = useState();
   const requestPermission = async () => {
     const { granted } = await ImagePicker.requestCameraPermissionsAsync();
     if (!granted) alert("You need to enable permissions");
@@ -28,5 +30,20 @@ export default function App() {
   useEffect(async () => {
     requestPermission();
   }, []);
-  return <Screen></Screen>;
+
+  const selectImage = async () => {
+    try {
+      const result = await ImagePicker.launchImageLibraryAsync();
+      if (!result.cancelled) setImageUri(result.uri);
+    } catch (error) {
+      console.log("Error reading an image", error);
+    }
+  };
+
+  return (
+    <Screen>
+      <Button title="Select Image" onPress={selectImage} />
+      <Image source={{ uri: imageUri }} style={{ width: 200, height: 200 }} />
+    </Screen>
+  );
 }
