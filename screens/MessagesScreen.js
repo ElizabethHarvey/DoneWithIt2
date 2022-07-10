@@ -17,14 +17,15 @@ import ListItemsSeparator from "../components/ListItemsSeparator";
 const initialMessage = [
   {
     id: 1,
-    title: "T1",
-    description: "D1",
+    title: "Dad",
+    description: "Hey! Is the dick still available?",
     image: require("../assets/mosh.jpg"),
   },
   {
     id: 2,
-    title: "T2",
-    description: "D2",
+    title: "Lizzy",
+    description:
+      "Im interested in this item. When will you be able to post it?",
     image: require("../assets/middlefinger.jpg"),
   },
 ];
