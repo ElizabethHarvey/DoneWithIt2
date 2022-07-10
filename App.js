@@ -19,15 +19,16 @@ import AppTextInput from "./components/TextInput";
 import Picker from "./components/Picker";
 import LoginScreen from "./screens/LoginScreen";
 import ListingEditScreen from "./screens/ListingEditScreen";
+import ImageInput from "./components/lists/ImageInput";
 
 export default function App() {
   const [imageUri, setImageUri] = useState();
   const requestPermission = async () => {
-    const { granted } = await ImagePicker.requestCameraPermissionsAsync();
+    const { granted } = await ImagePicker.requestCameraRollPermissionsAsync();
     if (!granted) alert("You need to enable permissions");
   };
 
-  useEffect(async () => {
+  useEffect(() => {
     requestPermission();
   }, []);
 
@@ -44,6 +45,7 @@ export default function App() {
     <Screen>
       <Button title="Select Image" onPress={selectImage} />
       <Image source={{ uri: imageUri }} style={{ width: 200, height: 200 }} />
+      <ImageInput imageUri={imageUri} />
     </Screen>
   );
 }
