@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Switch, Text, TextInput, View } from "react-native";
 import AppButton from "./components/AppButton";
+import { UserInterfaceIdiom } from "expo-constants";
 
 import WelcomeScreen from "./screens/WelcomeScreen";
 import Card from "./components/Card";
@@ -13,14 +14,15 @@ import ListItem from "./components/ListItem";
 import AccountScreen from "./screens/AccountScreen";
 import ListingsScreen from "./screens/ListingsScreen";
 import AppTextInput from "./components/AppTextInput";
-import { UserInterfaceIdiom } from "expo-constants";
+import AppPicker from "./components/AppPicker";
 
 export default function App() {
   const [isNew, setIsNew] = useState(false);
 
   return (
     <Screen>
-      <Switch value={isNew} onValueChange={(newValue) => setIsNew(newValue)} />
+      <AppPicker icon="apps" placeholder="Category" />
+      <AppTextInput icon="email" placeholder="Email" />
     </Screen>
   );
 }
