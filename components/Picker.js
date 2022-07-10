@@ -21,6 +21,7 @@ function Picker({
   items,
   numberOfColumns = 1,
   placeholder,
+  onSelectItem,
   PickerItemComponent = PickerItem,
   selectedItem,
   width = "100%",
