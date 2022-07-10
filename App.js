@@ -30,7 +30,7 @@ const Link = () => {
 
   return (
     <Button
-      title="View Tweet"
+      title="View Tweets"
       onPress={() => navigation.navigate("TweetDetails", { id: 1 })}
     />
   );
@@ -53,7 +53,13 @@ const Stack = createStackNavigator();
 const StackNavigator = () => (
   <Stack.Navigator>
     <Stack.Screen name="Tweets" component={Tweets} />
-    <Stack.Screen name="TweetDetails" component={TweetDetails} />
+    <Stack.Screen
+      name="TweetDetails"
+      component={TweetDetails}
+      options={({ route }) => ({
+        title: route.params.id,
+      })}
+    />
   </Stack.Navigator>
 );
 
