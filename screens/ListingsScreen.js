@@ -61,8 +61,9 @@ function ListingsScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   screen: {
-    padding: 8,
-    backgroundColor: colors.light,
+    padding: Platform.OS === "android" ? 8 : 20,
+    backgroundColor: colors.brightgray,
+    headerShown: false,
   },
 });
 
