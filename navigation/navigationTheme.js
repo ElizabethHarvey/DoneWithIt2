@@ -8,6 +8,7 @@ const myTheme = {
     ...DefaultTheme.colors,
     primary: colors.primary,
     background: colors.white,
+    borderHeight: 10,
   },
 };
 
