@@ -25,6 +25,7 @@ import LoginScreen from "./screens/LoginScreen";
 import ListingEditScreen from "./screens/ListingEditScreen";
 import ImageInput from "./components/lists/ImageInput";
 import ImageInputList from "./components/ImageInputList";
+import AuthNavigator from "./navigation/AuthNavigator";
 
 export default function App() {
   const Link = () => {
@@ -94,7 +95,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <TabNavigator />
+      <AuthNavigator />
     </NavigationContainer>
   );
 }
