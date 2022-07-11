@@ -29,12 +29,11 @@ import AuthNavigator from "./navigation/AuthNavigator";
 import NavigationTheme from "./navigation/navigationTheme";
 import routes from "./navigation/routes";
 import AppNavigator from "./navigation/AppNavigator";
+import { AsyncStorage } from "react-native";
 import NetInfo, { useNetInfo } from "@react-native-community/netinfo";
 
 export default function App() {
-  const netInfo = useNetInfo();
-
-  return <Button disabled={!netInfo.isInternetReachable} />;
+  return null;
 }
 
 //   const Link = () => {
