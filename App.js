@@ -26,7 +26,8 @@ import ListingEditScreen from "./screens/ListingEditScreen";
 import ImageInput from "./components/lists/ImageInput";
 import ImageInputList from "./components/ImageInputList";
 import AuthNavigator from "./navigation/AuthNavigator";
-import navigationTheme from "./navigation/navigationTheme";
+import NavigationTheme from "./navigation/navigationTheme";
+import routes from "./navigation/routes";
 import AppNavigator from "./navigation/AppNavigator";
 
 export default function App() {
@@ -36,7 +37,7 @@ export default function App() {
     return (
       <Button
         title="View Tweets"
-        onPress={() => navigation.navigate("TweetDetails", { id: 1 })}
+        onPress={() => navigation.navigate(routes.TWEET_DETAILS, { id: 1 })}
       />
     );
   };
@@ -96,7 +97,7 @@ export default function App() {
   );
 
   return (
-    <NavigationContainer theme={navigationTheme}>
+    <NavigationContainer theme={NavigationTheme}>
       <AppNavigator />
     </NavigationContainer>
   );

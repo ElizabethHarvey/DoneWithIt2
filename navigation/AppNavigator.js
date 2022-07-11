@@ -2,6 +2,7 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
+import routes from "./routes";
 import AccountScreen from "../screens/AccountScreen";
 import ListingsScreen from "../screens/ListingsScreen";
 import ListingEditScreen from "../screens/ListingEditScreen";
@@ -33,7 +34,7 @@ const AppNavigator = () => (
       options={({ navigation }) => ({
         tabBarButton: () => (
           <NewListingButton
-            onPress={() => navigation.navigate("ListingsEdit")}
+            onPress={() => navigation.navigate(routes.LISTING_EDIT)}
           />
         ),
         tabBarIcon: ({ color, size }) => (
