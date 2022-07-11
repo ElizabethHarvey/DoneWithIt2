@@ -33,77 +33,74 @@ import { AsyncStorage } from "react-native";
 import NetInfo, { useNetInfo } from "@react-native-community/netinfo";
 
 export default function App() {
-  return null;
+  const Link = () => {
+    const navigation = useNavigation();
+
+    return (
+      <Button
+        title="View Tweets"
+        onPress={() => navigation.navigate(routes.TWEET_DETAILS, { id: 1 })}
+      />
+    );
+  };
+
+  const Tweets = () => (
+    <Screen>
+      <Text>Tweets</Text>
+      <Link />
+    </Screen>
+  );
+
+  const TweetDetails = ({ route }) => (
+    <Screen>
+      <Text>Tweets Details {route.params.id}</Text>
+    </Screen>
+  );
+
+  const Stack = createStackNavigator();
+  const StackNavigator = () => (
+    <Stack.Navigator>
+      <Stack.Screen name="Tweets" component={Tweets} />
+      <Stack.Screen
+        name="TweetDetails"
+        component={TweetDetails}
+        options={({ route }) => ({ title: route.params.id })}
+      />
+    </Stack.Navigator>
+  );
+
+  const Account = () => (
+    <Screen>
+      <Text>Account</Text>
+    </Screen>
+  );
+
+  const Tab = createBottomTabNavigator();
+  const TabNavigator = () => (
+    <Tab.Navigator
+      tabBarOptions={{
+        activeBackgroundColor: "tomato",
+        activeTintColor: "white",
+        inactiveBackgroundColor: "#eee",
+        inactiveTintColor: "black",
+      }}
+    >
+      <Tab.Screen
+        name="Feed"
+        component={StackNavigator}
+        options={{
+          tabBarIcon: ({ size, color }) => (
+            <MaterialCommunityIcons name="home" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen name="Account" component={Account} />
+    </Tab.Navigator>
+  );
+
+  return (
+    <NavigationContainer theme={NavigationTheme}>
+      <AppNavigator />
+    </NavigationContainer>
+  );
 }
-
-//   const Link = () => {
-//     const navigation = useNavigation();
-
-//     return (
-//       <Button
-//         title="View Tweets"
-//         onPress={() => navigation.navigate(routes.TWEET_DETAILS, { id: 1 })}
-//       />
-//     );
-//   };
-
-//   const Tweets = () => (
-//     <Screen>
-//       <Text>Tweets</Text>
-//       <Link />
-//     </Screen>
-//   );
-
-//   const TweetDetails = ({ route }) => (
-//     <Screen>
-//       <Text>Tweets Details {route.params.id}</Text>
-//     </Screen>
-//   );
-
-//   const Stack = createStackNavigator();
-//   const StackNavigator = () => (
-//     <Stack.Navigator>
-//       <Stack.Screen name="Tweets" component={Tweets} />
-//       <Stack.Screen
-//         name="TweetDetails"
-//         component={TweetDetails}
-//         options={({ route }) => ({ title: route.params.id })}
-//       />
-//     </Stack.Navigator>
-//   );
-
-//   const Account = () => (
-//     <Screen>
-//       <Text>Account</Text>
-//     </Screen>
-//   );
-
-//   const Tab = createBottomTabNavigator();
-//   const TabNavigator = () => (
-//     <Tab.Navigator
-//       tabBarOptions={{
-//         activeBackgroundColor: "tomato",
-//         activeTintColor: "white",
-//         inactiveBackgroundColor: "#eee",
-//         inactiveTintColor: "black",
-//       }}
-//     >
-//       <Tab.Screen
-//         name="Feed"
-//         component={StackNavigator}
-//         options={{
-//           tabBarIcon: ({ size, color }) => (
-//             <MaterialCommunityIcons name="home" size={size} color={color} />
-//           ),
-//         }}
-//       />
-//       <Tab.Screen name="Account" component={Account} />
-//     </Tab.Navigator>
-//   );
-
-//   return (
-//     <NavigationContainer theme={NavigationTheme}>
-//       <AppNavigator />
-//     </NavigationContainer>
-//   );
-// }
