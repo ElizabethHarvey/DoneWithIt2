@@ -43,7 +43,7 @@ function ListingsScreen({ navigation }) {
       )}
       <ActivityIndicator visible={getListingsApi.loading} />
       <FlatList
-        data={getListingsApi.listings}
+        data={getListingsApi.data}
         keyExtractor={(listing) => listing.id.toString()}
         renderItem={({ item }) => (
           <Card
