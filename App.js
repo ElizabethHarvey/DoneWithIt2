@@ -26,6 +26,8 @@ import ListingEditScreen from "./screens/ListingEditScreen";
 import ImageInput from "./components/lists/ImageInput";
 import ImageInputList from "./components/ImageInputList";
 import AuthNavigator from "./navigation/AuthNavigator";
+import navigationTheme from "./navigation/navigationTheme";
+import AppNavigator from "./navigation/AppNavigator";
 
 export default function App() {
   const Link = () => {
@@ -94,8 +96,8 @@ export default function App() {
   );
 
   return (
-    <NavigationContainer>
-      <AuthNavigator />
+    <NavigationContainer theme={navigationTheme}>
+      <AppNavigator />
     </NavigationContainer>
   );
 }
