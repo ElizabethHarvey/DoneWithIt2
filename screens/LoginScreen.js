@@ -14,6 +14,7 @@ import AppButton from "../components/Button";
 import AppTextInput from "../components/TextInput";
 import Screen from "../components/Screen";
 import authApi from "../components/api/auth";
+import jwtDecode from "jwt-decode";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
@@ -29,7 +30,8 @@ function LoginScreen(props) {
     if (!result.ok) return setLoginFailed(true);
 
     setLoginFailed(false);
-    console.log(result.data);
+    const user = jwtDecode(result.data);
+    console.log(user);
   };
 
   return (
