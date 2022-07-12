@@ -32,6 +32,7 @@ import AppNavigator from "./navigation/AppNavigator";
 import { AsyncStorage } from "react-native";
 import NetInfo, { useNetInfo } from "@react-native-community/netinfo";
 import OfflineNotice from "./components/OfflineNotice";
+import Auth from "./components/api/auth";
 
 // const Link = () => {
 //   const navigation = useNavigation();
@@ -104,7 +105,7 @@ export default function App() {
     <>
       <OfflineNotice />
       <NavigationContainer theme={NavigationTheme}>
-        <AppNavigator />
+        <AuthNavigator />
       </NavigationContainer>
     </>
   );
