@@ -38,7 +38,8 @@ function ListingsScreen({ navigation }) {
       {getListingsApi.error && (
         <>
           <AppText>Couldn't retrieve the listings.</AppText>
-          <Button title="Retry" onPress={loadListings} />
+          {/* <Button title="Retry" onPress={loadListings} /> */}
+          <Button title="Retry" onPress={getListingsApi.request} />
         </>
       )}
       <ActivityIndicator visible={getListingsApi.loading} />

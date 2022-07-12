@@ -1,5 +1,6 @@
 import React from "react";
-import { View, StyleSheet, KeyboardAvoidingView, Image } from "react-native";
+import { View, StyleSheet, KeyboardAvoidingView } from "react-native";
+import Image from "react-native-expo-image-cache";
 import AppText from "../AppText";
 import listings from "../components/api/listings";
 import ListItem from "../components/lists/ListItem";
